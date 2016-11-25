@@ -1,0 +1,7 @@
+PERF_SQUARE(a):
+	if a > 0
+		b <- a**(1/2)
+		c <- b - mod b
+	else
+		PRINT "Number must be a positive integer"
+	RETURN c**2

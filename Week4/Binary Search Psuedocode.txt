@@ -1,0 +1,15 @@
+BINARY-SEARCH(L, low, high)
+	i <- 0
+	b <- length[L] - 1
+	found <- FALSE
+
+	WHILE i <= b and found = FALSE
+		m <- floor[(i+b)/2]
+		IF low <= L[m] <= high
+			found <- TRUE
+	ELSE
+		IF low < L[m]
+			b <- m - 1
+		ELSE
+			i <- m + 1
+	RETURN found
