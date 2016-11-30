@@ -1,15 +1,13 @@
 import random
 
 def shuf(List):
-    newLen = len(List)                      #1
-    for a in range(newLen,0,-1):            #n
-        b=random.randint(0,a)               #n
-        if b == a:                          #n
-            continue                        #n
-        List[a],List[b] = List[b],List[a]   #n
-    print(List)                             #1
+    for a in range(len(List)-1,0,-1):
+        b=random.randint(0,a)
+        if b == a:
+            continue
+        List[a],List[b] = List[b],List[a]
+    return (List)
 
-shuf([5,3,8,6,1,9,2,7])
-
+#Run-time bounds (Big O):
 #Total = 5n + 2
 #O(n)
