@@ -1,16 +1,20 @@
 import math
+
 def factZeros(a):
-    zeros = 0                                   #1
-    factorial = math.factorial(a)               #1
-    print("Factorial Value:", factorial)        #1
-    while factorial > 0:                        #n
-        if factorial%10 == 0:                   #n
-            zeros += 1                          #n
-            factorial = factorial/10            #n
-        else:                                   #n
-            break                               #n
-    print("Trailing Zeros: " + str(zeros))
+    trail = 0
+    for n in range(5, a+1):
+        
+        while n:
+            
+            if n%5 == 0:
+                trail += 1
+                n = n/5
+                
+            else:
+                break
+            
+    return trail
 
-
+#Run-time bounds (Big O):
 #O(n)
 
