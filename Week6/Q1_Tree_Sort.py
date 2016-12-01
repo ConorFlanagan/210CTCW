@@ -39,13 +39,13 @@ def in_order(tree):
 
     while(not done):
         if tree is not None:
-            l.append(tree)
-            tree = tree.left
+            l.append(tree)          #Add root to stack
+            tree = tree.left        #Pointer to left value
         else:
-            if(len(l) >0):
-                tree = l.pop()
+            if(len(l) > 0):
+                tree = l.pop()      #Take from top of stack
                 print(tree.value)
-                tree = tree.right
+                tree = tree.right   #Pointer to right value
             else:
                 done = 1
 
