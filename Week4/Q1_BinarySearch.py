@@ -13,3 +13,5 @@ def binarySearch(L, low, high):
             else:
                 i = m + 1
     return found
+
+print(binarySearch([2,3,4,7,9,13], 10, 14))
