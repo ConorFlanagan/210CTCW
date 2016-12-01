@@ -1,0 +1,37 @@
+
+MATRIX_ADD(matrix1, matrix2)
+	FOR i <- 0 to LENGTH(matrix1)
+		FOR j <- 0 to LENGTH(matrix1)
+			matrix1[i][j] = matrix1[i][j] + matrix2[i][j]
+	RETURN matrix1
+	//BigO(n^2)
+
+MATRIX_SUBTRACT(matrix1, matrix2)
+	FOR i <- 0 to LENGTH(matrix1)
+		FOR j <- 0 to LENGTH(matrix1)
+			matrix1[i][j] = matrix1[i][j] - matrix2[i][j]
+	RETURN matrix1
+	//BigO(n^2)
+
+MATRIX_SCALARMULT(matrix1, scalar)
+	FOR i <- 0 to LENGTH(matrix1)
+		FOR j <- 0 to LENGTH(matrix1)
+			matrix1[i][j] = matrix1[i][j] * scalar
+	RETURN matrix1
+	//BigO(n^2)
+
+MATRIX_MULT(matrix1, matrix2)
+	resultMatrix <- [[],[]]
+	FOR i <- 0 to LENGTH(matrix1)
+		FOR j <- 0 to LENGTH(matrix1)
+			FOR k <- 0 to LENGTH(matrix1)
+				counter = matrix1[i][k] * matrix2[k][j]
+				resultMatrix[i][j] = counter + resultMatrix[i][j]
+	//BigO(n^3)
+
+
+
+
+MATRIX_SUBTRACT(MATRIX_MULT(B,C), MATRIX_SCALARMULT(MATRIX_ADD(B,C),2))
+//BigO(n^3)
+
