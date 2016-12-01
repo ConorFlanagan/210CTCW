@@ -40,6 +40,9 @@ class graph:
                 visited.append(u)
                 for e in self.dictionary[u]:
                     stack.append(e)
+        f = open("DFS.txt", "w")
+        f.write("DFS Traversal: %s " % visited)
+        f.close()
         return visited
     
     def BFS(self, vertex):
@@ -53,13 +56,17 @@ class graph:
                 visited.append(u)
                 for e in self.dictionary[u]:
                     queue.insert(0, e)
+        f = open("BFS.txt", "w")
+        f.write("BFS Traversal: %s " % visited)
+        f.close()
         return visited
 
+    """
     def dijkstra(self, source, dest):
         current = source
         done = False
         for node in self.dictionary:
-            self.tentative[node] = math.inf
+            self.tentative[node] = float("inf")
         self.tentative[source] = 0
         visited = []
         path = [source]
@@ -78,7 +85,7 @@ class graph:
                     #self.previous[adjacent] = current
                 print("Current weight for node ", adjacent, ": ", self.tentative[adjacent])
             visited.append(current)
-            minimum = math.inf
+            minimum = float("inf")
             for node in self.dictionary[current]:
                 print("======")
                 print("Node: ", node)
@@ -88,7 +95,7 @@ class graph:
                 print("======")
                 if node == dest and self.tentative[node] < self.tentative[current]:
                     current = node
-                    path.append(current)
+                    path.append(node)
                     done = True
                     
                 elif node not in visited and self.tentative[node] < minimum:
@@ -115,7 +122,7 @@ class graph:
         print("Visited: ", visited)
         print("Path: ", path)
         print(path[0:(path.index(dest)+1)])
-
+    """
 
 g = graph()
 g.addVertex(1)
