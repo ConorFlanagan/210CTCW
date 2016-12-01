@@ -1,0 +1,7 @@
+PRIME(A, count <- 2)
+	IF A <= 1 OR A = count DO
+		RETURN TRUE
+	ELIF (A % count) = 0 DO
+		RETURN FALSE
+	ELSE DO
+		RETURN PRIME(A, counter + 1)

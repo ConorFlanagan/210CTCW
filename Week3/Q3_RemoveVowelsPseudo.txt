@@ -1,0 +1,13 @@
+REMOVE_VOWELS(word, count=0)
+	vowels <- LIST of vowels
+	IF count = length(vowels) DO
+		PRINT word as string
+	ELIF count < Length of vowels DO
+		IF vowel is in word DO
+			remove vowel from word
+			CALL FUNCTION REMOVE_VOWELS
+		ELSE DO
+			count <- count + 1
+			CALL FUNCTION REMOVE_VOWELS
+		RETURN word
+	

@@ -1,0 +1,9 @@
+REV_WORDS()
+	initial <- INPUT string
+	NEW LIST wordlist <- LIST of words in string
+	revList <- ""
+	FOR each word in initial, split at ' '
+		INSERT word IN wordList
+	FOR each word in wordList
+		APPEND word to revList
+	PRINT revList
