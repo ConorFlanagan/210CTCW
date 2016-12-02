@@ -22,32 +22,32 @@ class graph:
             print(key, ":", self.dictionary[key])
     
     def DFS(self, vertex):
-        stack = []
-        visited = []
+        stack = []                  #Stack for unvisited vertices
+        visited = []                #List of visited vertices
         stack.append(vertex)
         while stack != []:
             u = stack.pop()
             if u not in visited:
                 visited.append(u)
                 for e in self.dictionary[u]:
-                    stack.append(e)
+                    stack.append(e)         #Add adjacent vertices to stack
         f = open("DFS.txt", "w")
-        f.write("DFS Traversal: %s " % visited)
+        f.write("DFS Traversal: %s " % visited)     #Write DFS path to text file
         f.close()
         return visited
     
     def BFS(self, vertex):
-        queue = []
-        visited = []
+        queue = []                  #Queue for unvisited vertices
+        visited = []                #List of visited vertices
         queue.insert(0, vertex)
         while queue != []:
             u = queue.pop()
             if u not in visited:
                 visited.append(u)
                 for e in self.dictionary[u]:
-                    queue.insert(0, e)
+                    queue.insert(0, e)      #Add adjacent vertices to queue
         f = open("BFS.txt", "w")
-        f.write("BFS Traversal: %s " % visited)
+        f.write("BFS Traversal: %s " % visited)     #Write BFS path to text file
         f.close()
         return visited
 
