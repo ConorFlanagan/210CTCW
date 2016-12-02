@@ -1,1 +1,1 @@
-BFS Traversal: [1, 2, 3, 5, 8, 4, 6, 7] 
+BFS Traversal: [4, 3, 6, 1, 5, 7, 2, 8] 

@@ -1,0 +1,9 @@
+CLASS graph
+	INIT FUNCTION
+		NEW DICTIONARY dictionary
+	FUNCTION ADD_VERTEX parameters (vertex)
+		IF vertex is in dictionary DO
+			ADD TO dictionary key <- vertex, value <- NEW LIST
+	FUNCTION ADD_EDGE parameters (vertex1, vertex2)
+		ADD TO dictionary key <- vertex1, value <- vertex2
+		ADD TO dictionary key <- vertex2, value <- vertex1

@@ -61,7 +61,6 @@ class graph:
         f.close()
         return visited
 
-    """
     def dijkstra(self, source, dest):
         current = source
         done = False
@@ -115,14 +114,10 @@ class graph:
                 path.append(current)
                 
         print("==============")
-        print("Correct output for example:")
-        print("[1, 2, 5, 7, 6]")
-        print("==============")
         print("Actual output")
         print("Visited: ", visited)
         print("Path: ", path)
         print(path[0:(path.index(dest)+1)])
-    """
 
 g = graph()
 g.addVertex(1)
