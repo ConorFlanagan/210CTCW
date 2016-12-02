@@ -7,21 +7,25 @@ class graph:
         self.dictionary = {}            #Dictionary for edges and adjacent edges
 
     def addVertex(self, vertex):
+        #Function to add a vertex to the graph
         if vertex not in self.dictionary:
             self.dictionary[vertex] = []
         else:
             print("Cannot have two vertices with the same label.")
 
     def addEdge(self,vertex1,vertex2,weight):
+        #Funtion to add an edge to the graph using the two vertices as reference
         self.dictionary[vertex1].append(vertex2)        #Add edge as adjacent
         self.dictionary[vertex2].append(vertex1)        #Add edge as adjacent
         
     def printDict(self):
+        #Function to print out the graph dictionary in a readable form
         print("Edges:")
         for key in self.dictionary:
             print(key, ":", self.dictionary[key])
     
     def DFS(self, vertex):
+        #Function to perform a Depth First Search
         stack = []                  #Stack for unvisited vertices
         visited = []                #List of visited vertices
         stack.append(vertex)
@@ -37,6 +41,7 @@ class graph:
         return visited
     
     def BFS(self, vertex):
+        #Function to perform a Breadth First Search
         queue = []                  #Queue for unvisited vertices
         visited = []                #List of visited vertices
         queue.insert(0, vertex)
